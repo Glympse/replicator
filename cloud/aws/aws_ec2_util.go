@@ -15,7 +15,16 @@ import (
 // translateIptoID translates the IP address of a node to the EC2 instance ID.
 func translateIptoID(ip, region string) (id string) {
 	sess := session.Must(session.NewSession())
-	svc := ec2.New(sess, &aws.Config{Region: aws.String(region)})
+
+	// Aws config with custom Retires, Region and debug logging
+	awsConf := aws.NewConfig().
+		WithMaxRetries(11).
+		WithRegion(region).
+		WithLogLevel(aws.LogDebugWithRequestRetries | aws.LogDebugWithRequestErrors)
+
+	svc := ec2.New(sess, awsConf)
+
+	logging.Debug("cloud/aws: IP to resolve to ", ip)
 
 	params := &ec2.DescribeInstancesInput{
 		DryRun: aws.Bool(false),
