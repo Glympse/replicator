@@ -38,7 +38,13 @@ func NewAwsScalingProvider(workerPool *structs.WorkerPool) (structs.ScalingProvi
 // newAwsAsgService returns a session object for the AWS autoscaling service.
 func newAwsAsgService(region string) (Session *autoscaling.AutoScaling) {
 	sess := session.Must(session.NewSession())
-	svc := autoscaling.New(sess, &aws.Config{Region: aws.String(region)})
+
+	awsConf := aws.NewConfig().
+		WithMaxRetries(11).
+		WithRegion(region).
+		WithLogLevel(aws.LogDebugWithRequestRetries | aws.LogDebugWithRequestErrors)
+
+	svc := autoscaling.New(sess, awsConf)
 	return svc
 }
 
