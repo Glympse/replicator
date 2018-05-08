@@ -1,7 +1,7 @@
 package replicator
 
 import (
-	"github.com/elsevier-core-engineering/replicator/replicator/structs"
+	"github.com/glympse/replicator/replicator/structs"
 )
 
 // Status endpoint is used to get information on the server status.

@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/elsevier-core-engineering/replicator/client"
+	"github.com/glympse/replicator/client"
 )
 
 func TestLeader_newLeaderCandidate(t *testing.T) {

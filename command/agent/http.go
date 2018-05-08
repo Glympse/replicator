@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/NYTimes/gziphandler"
-	"github.com/elsevier-core-engineering/replicator/logging"
-	"github.com/elsevier-core-engineering/replicator/replicator/structs"
+	"github.com/glympse/replicator/logging"
+	"github.com/glympse/replicator/replicator/structs"
 	"github.com/ugorji/go/codec"
 )
 

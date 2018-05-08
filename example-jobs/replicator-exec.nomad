@@ -35,7 +35,7 @@ job "replicator" {
       }
 
       artifact {
-        source = "https://github.com/elsevier-core-engineering/replicator/releases/download/${NOMAD_META_VERSION}/${attr.kernel.name}-${attr.cpu.arch}-replicator"
+        source = "https://github.com/glympse/replicator/releases/download/${NOMAD_META_VERSION}/${attr.kernel.name}-${attr.cpu.arch}-replicator"
       }
 
       resources {

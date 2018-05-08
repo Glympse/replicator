@@ -8,10 +8,10 @@ import (
 
 	metrics "github.com/armon/go-metrics"
 
-	"github.com/elsevier-core-engineering/replicator/client"
-	"github.com/elsevier-core-engineering/replicator/logging"
-	"github.com/elsevier-core-engineering/replicator/notifier"
-	"github.com/elsevier-core-engineering/replicator/replicator/structs"
+	"github.com/glympse/replicator/client"
+	"github.com/glympse/replicator/logging"
+	"github.com/glympse/replicator/notifier"
+	"github.com/glympse/replicator/replicator/structs"
 )
 
 // asyncClusterScaling triggers concurrent cluster scaling operations for
@@ -116,7 +116,7 @@ func (s *Server) workerPoolScaling(id int, pools <-chan string,
 				return
 			}
 
-			// Copy the desired scsaling direction to the state object.
+			// Copy the desired scaling direction to the state object.
 			workerPool.State.ScalingDirection = poolCapacity.ScalingDirection
 
 			// Attempt to update state tracking information in Consul.

@@ -7,9 +7,9 @@ import (
 
 	"github.com/hashicorp/nomad/api"
 
-	"github.com/elsevier-core-engineering/replicator/helper"
-	"github.com/elsevier-core-engineering/replicator/replicator/structs"
-	"github.com/elsevier-core-engineering/replicator/testutil"
+	"github.com/glympse/replicator/helper"
+	"github.com/glympse/replicator/replicator/structs"
+	"github.com/glympse/replicator/testutil"
 )
 
 // Test the parsing of scaling meta configuration parameters and
