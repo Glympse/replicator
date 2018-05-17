@@ -1,12 +1,12 @@
 hash: 0f8d416dc328d42e98fc960df312286a7dfb2936a9e57bd73c736e4029c91e81
-updated: 2018-05-16T01:51:39.459252378-07:00
+updated: 2018-05-16T11:47:46.007683659-07:00
 imports:
 - name: github.com/armon/go-metrics
   version: 783273d703149aaeb9897cf58613d5af48861c25
 - name: github.com/armon/go-radix
   version: 1fca145dffbcaa8fe914309b1ec0cfc67500fe61
 - name: github.com/aws/aws-sdk-go
-  version: c7cd1ebe87257cde9b65112fc876b0339ea0ac30
+  version: ee7b4b1162937cba700de23bd90acb742982e626
   subpackages:
   - aws
   - aws/awserr
@@ -48,7 +48,7 @@ imports:
 - name: github.com/dariubs/percent
   version: 6a210960ed74f0c94ad2c45fb5ba2a49b7fd7b1c
 - name: github.com/fatih/color
-  version: 5b77d2a35fb0ede96d138fc9a99f5c9b6aef11b4
+  version: 2d684516a8861da43017284349b7e303e809ac21
 - name: github.com/franela/goreq
   version: bcd34c9993f899273c74baaa95e15386cd97b6e7
 - name: github.com/go-ini/ini

@@ -24,7 +24,7 @@ func translateIptoID(ip, region string) (id string) {
 
 	svc := ec2.New(sess, awsConf)
 
-	logging.Debug("cloud/aws: IP to resolve to ", ip)
+	logging.Debug("cloud/aws: IP to resolve to %v", ip)
 
 	params := &ec2.DescribeInstancesInput{
 		DryRun: aws.Bool(false),
