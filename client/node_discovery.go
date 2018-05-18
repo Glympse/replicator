@@ -5,7 +5,6 @@ import (
 	"time"
 
 	nomad "github.com/hashicorp/nomad/api"
-	nomadStructs "github.com/hashicorp/nomad/nomad/structs"
 	"github.com/mitchellh/hashstructure"
 	"github.com/mitchellh/mapstructure"
 
@@ -44,14 +43,6 @@ func (c *nomadClient) NodeWatcher(nodeRegistry *structs.NodeRegistry,
 				continue
 			}
 
-			if node.SchedulingEligibility == "ineligible" && node.Status == nomadStructs.NodeStatusReady {
-				logging.Warning("client/node_discovery: node %v has been placed in "+
-					"drain mode, initiating deregistration of the node", node.ID)
-
-				Deregister(node, nodeRegistry)
-				continue
-			}
-
 			switch node.Status {
 
 			// If the node is in a ready state, determine if scaling has been
@@ -84,6 +75,15 @@ func (c *nomadClient) NodeWatcher(nodeRegistry *structs.NodeRegistry,
 				if err := Register(nodeRecord, nodeConfig, nodeRegistry); err != nil {
 					logging.Error("client/node_discovery: an error occurred while "+
 						"attempting to register node %v: %v", nodeRecord.ID, err)
+				}
+
+                // Node is in a bad state, terminate and deregister
+				if node.SchedulingEligibility == "ineligible" {
+					logging.Warning("client/node_discovery: node %v has been placed in "+
+						"drain mode, initiating deregistration of the node", node.ID)
+
+					Deregister(node, nodeRegistry)
+					continue
 				}
 
 				if !nodeConfig.ScalingEnabled {
@@ -234,10 +234,10 @@ func Register(node *nomad.Node, workerPool *structs.WorkerPool,
 	}
 
 	// Decline to register the node if drain mode is enabled.
-	if node.SchedulingEligibility == "ineligible" {
+	/*if node.SchedulingEligibility == "ineligible" {
 		return fmt.Errorf("an attempt to register node %v failed because the "+
 			"node is in drain mode", node.ID)
-	}
+	}*/
 
 	nodeRegistry.Lock.Lock()
 	defer nodeRegistry.Lock.Unlock()
