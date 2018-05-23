@@ -194,6 +194,9 @@ func (s *Server) workerPoolScaling(id int, pools <-chan string,
 				logging.Info("core/cluster_scaling: placing node %v from worker pool %v "+
 					"in drain mode", nodeID, workerPool.Name)
 
+				// TODO: We have seen an instance that was detached and NOT in drain mode
+				// First guess is because the node is start marked Elgible, need to remove it from
+				// the pool's elgibleNodes state
 				if err = nomadClient.DrainNode(nodeID); err != nil {
 					logging.Error("core/cluster_scaling: an error occurred while "+
 						"attempting to place node %v from worker pool %v in drain mode: "+
