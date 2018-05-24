@@ -1,6 +1,6 @@
 [Unit]
 Description=Replicator
-Documentation=https://github.com/elsevier-core-engineering/replicator
+Documentation=https://github.com/glympse/replicator
 
 [Service]
 ExecStart=/usr/local/bin/replicator agent -config=/etc/replicator.d/

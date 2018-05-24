@@ -8,8 +8,8 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/elsevier-core-engineering/replicator/logging"
-	"github.com/elsevier-core-engineering/replicator/replicator/structs"
+	"github.com/glympse/replicator/logging"
+	"github.com/glympse/replicator/replicator/structs"
 )
 
 // Server is the Replicator server that is responsible for running the API and

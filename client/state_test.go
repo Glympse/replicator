@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/elsevier-core-engineering/replicator/replicator/structs"
-	"github.com/elsevier-core-engineering/replicator/testutil"
+	"github.com/glympse/replicator/replicator/structs"
+	"github.com/glympse/replicator/testutil"
 )
 
 func TestClient_StateTracking(t *testing.T) {

@@ -1,8 +1,8 @@
 package replicator
 
 import (
-	"github.com/elsevier-core-engineering/replicator/logging"
-	"github.com/elsevier-core-engineering/replicator/replicator/structs"
+	"github.com/glympse/replicator/logging"
+	"github.com/glympse/replicator/replicator/structs"
 )
 
 const (

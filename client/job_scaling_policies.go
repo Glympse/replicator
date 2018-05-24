@@ -7,9 +7,9 @@ import (
 	nomadStructs "github.com/hashicorp/nomad/nomad/structs"
 	"github.com/mitchellh/mapstructure"
 
-	"github.com/elsevier-core-engineering/replicator/helper"
-	"github.com/elsevier-core-engineering/replicator/logging"
-	"github.com/elsevier-core-engineering/replicator/replicator/structs"
+	"github.com/glympse/replicator/helper"
+	"github.com/glympse/replicator/logging"
+	"github.com/glympse/replicator/replicator/structs"
 )
 
 // JobWatcher is the main entry point into Replicators process of reading and

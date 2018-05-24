@@ -9,9 +9,9 @@ import (
 	nomad "github.com/hashicorp/nomad/api"
 	nomadStructs "github.com/hashicorp/nomad/nomad/structs"
 
-	"github.com/elsevier-core-engineering/replicator/helper"
-	"github.com/elsevier-core-engineering/replicator/logging"
-	"github.com/elsevier-core-engineering/replicator/replicator/structs"
+	"github.com/glympse/replicator/helper"
+	"github.com/glympse/replicator/logging"
+	"github.com/glympse/replicator/replicator/structs"
 )
 
 // Scaling metric types indicate the most-utilized resource across the cluster. When evaluating
@@ -165,7 +165,7 @@ func (c *nomadClient) LeastAllocatedNode(capacity *structs.ClusterCapacity,
 // will be assigned and existing allocations will be migrated.
 func (c *nomadClient) DrainNode(nodeID string) (err error) {
 	// Initiate allocation draining for specified node.
-	_, err = c.nomad.Nodes().ToggleDrain(nodeID, true, &nomad.WriteOptions{})
+	_, err = c.nomad.Nodes().ToggleDrain(nodeID, true, nil)
 	if err != nil {
 		return err
 	}

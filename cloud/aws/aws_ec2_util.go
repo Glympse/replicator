@@ -9,13 +9,22 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ec2"
 
-	"github.com/elsevier-core-engineering/replicator/logging"
+	"github.com/glympse/replicator/logging"
 )
 
 // translateIptoID translates the IP address of a node to the EC2 instance ID.
 func translateIptoID(ip, region string) (id string) {
 	sess := session.Must(session.NewSession())
-	svc := ec2.New(sess, &aws.Config{Region: aws.String(region)})
+
+	// Aws config with custom Retires, Region and debug logging
+	awsConf := aws.NewConfig().
+		WithMaxRetries(11).
+		WithRegion(region).
+		WithLogLevel(aws.LogDebugWithRequestRetries | aws.LogDebugWithRequestErrors)
+
+	svc := ec2.New(sess, awsConf)
+
+	logging.Debug("cloud/aws: IP to resolve to ", ip)
 
 	params := &ec2.DescribeInstancesInput{
 		DryRun: aws.Bool(false),
@@ -43,7 +52,13 @@ func translateIptoID(ip, region string) (id string) {
 func terminateInstance(instanceID, region string) error {
 	// Setup the session and the EC2 service link to use for this operation.
 	sess := session.Must(session.NewSession())
-	svc := ec2.New(sess, &aws.Config{Region: aws.String(region)})
+
+	awsConf := aws.NewConfig().
+		WithMaxRetries(11).
+		WithRegion(region).
+		WithLogLevel(aws.LogDebugWithRequestRetries | aws.LogDebugWithRequestErrors)
+
+	svc := ec2.New(sess, awsConf)
 
 	// Setup parameters for the termination API request.
 	tparams := &ec2.TerminateInstancesInput{

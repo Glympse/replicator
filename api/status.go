@@ -1,6 +1,6 @@
 package api
 
-import "github.com/elsevier-core-engineering/replicator/replicator/structs"
+import "github.com/glympse/replicator/replicator/structs"
 
 // Status is used to query all status related endpoints.
 type Status struct {

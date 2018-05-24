@@ -6,10 +6,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/elsevier-core-engineering/replicator/client"
-	"github.com/elsevier-core-engineering/replicator/logging"
-	"github.com/elsevier-core-engineering/replicator/notifier"
-	"github.com/elsevier-core-engineering/replicator/replicator/structs"
+	"github.com/glympse/replicator/client"
+	"github.com/glympse/replicator/logging"
+	"github.com/glympse/replicator/notifier"
+	"github.com/glympse/replicator/replicator/structs"
 )
 
 // newJobScalingPolicy returns a new JobScalingPolicies struct for Replicator

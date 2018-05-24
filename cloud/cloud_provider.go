@@ -5,9 +5,9 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/elsevier-core-engineering/replicator/cloud/aws"
-	"github.com/elsevier-core-engineering/replicator/logging"
-	"github.com/elsevier-core-engineering/replicator/replicator/structs"
+	"github.com/glympse/replicator/cloud/aws"
+	"github.com/glympse/replicator/logging"
+	"github.com/glympse/replicator/replicator/structs"
 )
 
 // BuiltinScalingProviders tracks the available scaling providers.

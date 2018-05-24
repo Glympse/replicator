@@ -3,7 +3,7 @@ package notifier
 import (
 	"fmt"
 
-	"github.com/elsevier-core-engineering/replicator/logging"
+	"github.com/glympse/replicator/logging"
 	alerts "github.com/opsgenie/opsgenie-go-sdk/alertsv2"
 	ogclient "github.com/opsgenie/opsgenie-go-sdk/client"
 )

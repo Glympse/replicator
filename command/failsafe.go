@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/elsevier-core-engineering/replicator/command/base"
-	"github.com/elsevier-core-engineering/replicator/notifier"
-	"github.com/elsevier-core-engineering/replicator/replicator"
-	"github.com/elsevier-core-engineering/replicator/replicator/structs"
+	"github.com/glympse/replicator/command/base"
+	"github.com/glympse/replicator/notifier"
+	"github.com/glympse/replicator/replicator"
+	"github.com/glympse/replicator/replicator/structs"
 )
 
 // FailsafeCommand is a command implementation that allows operators to

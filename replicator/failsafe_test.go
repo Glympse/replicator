@@ -3,10 +3,10 @@ package replicator
 import (
 	"testing"
 
-	"github.com/elsevier-core-engineering/replicator/client"
-	"github.com/elsevier-core-engineering/replicator/notifier"
-	"github.com/elsevier-core-engineering/replicator/replicator/structs"
-	"github.com/elsevier-core-engineering/replicator/testutil"
+	"github.com/glympse/replicator/client"
+	"github.com/glympse/replicator/notifier"
+	"github.com/glympse/replicator/replicator/structs"
+	"github.com/glympse/replicator/testutil"
 )
 
 func TestFailsafe_FaileSafeCheck(t *testing.T) {
