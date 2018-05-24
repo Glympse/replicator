@@ -6,11 +6,11 @@
 #				 elsce/replicator agent
 
 FROM alpine:edge
-LABEL maintainer Eric Westfall<(eawestfall@gmail.com> (@eawestfall)
-LABEL vendor "Elsevier Core Engineering"
+LABEL maintainer Kainoa Seto<(kainoa.seto@gmail.com>
+LABEL vendor "Glympse Engineering"
 LABEL documentation "https://github.com/glympse/replicator"
 
-ENV REPLICATOR_VERSION v1.1.0-beta1
+ENV REPLICATOR_VERSION v1.1.1
 
 WORKDIR /usr/local/bin/
 
