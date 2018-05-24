@@ -97,6 +97,11 @@ func (sp *AwsScalingProvider) scaleOut(workerPool *structs.WorkerPool) error {
 	terminationPolicies := asg.AutoScalingGroups[0].TerminationPolicies
 	newCapacity := *asg.AutoScalingGroups[0].DesiredCapacity + int64(workerPool.ScaleFactor)
 
+	// If newCapacity is greater than the ASG's max then only update to the max allowed
+	if newCapacity > *asg.AutoScalingGroups[0].MaxSize {
+		newCapacity = *asg.AutoScalingGroups[0].MaxSize;
+	}
+
 	// Setup autoscaling group input parameters.
 	params := &autoscaling.UpdateAutoScalingGroupInput{
 		AutoScalingGroupName: aws.String(workerPool.Name),
