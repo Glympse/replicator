@@ -1,0 +1,193 @@
+hash: 0f8d416dc328d42e98fc960df312286a7dfb2936a9e57bd73c736e4029c91e81
+updated: 2018-05-16T11:47:46.007683659-07:00
+imports:
+- name: github.com/armon/go-metrics
+  version: 783273d703149aaeb9897cf58613d5af48861c25
+- name: github.com/armon/go-radix
+  version: 1fca145dffbcaa8fe914309b1ec0cfc67500fe61
+- name: github.com/aws/aws-sdk-go
+  version: ee7b4b1162937cba700de23bd90acb742982e626
+  subpackages:
+  - aws
+  - aws/awserr
+  - aws/awsutil
+  - aws/client
+  - aws/client/metadata
+  - aws/corehandlers
+  - aws/credentials
+  - aws/credentials/ec2rolecreds
+  - aws/credentials/endpointcreds
+  - aws/credentials/stscreds
+  - aws/defaults
+  - aws/ec2metadata
+  - aws/endpoints
+  - aws/request
+  - aws/session
+  - aws/signer/v4
+  - internal/sdkio
+  - internal/sdkrand
+  - internal/shareddefaults
+  - private/protocol
+  - private/protocol/ec2query
+  - private/protocol/query
+  - private/protocol/query/queryutil
+  - private/protocol/rest
+  - private/protocol/xml/xmlutil
+  - service/autoscaling
+  - service/ec2
+  - service/sts
+- name: github.com/bgentry/speakeasy
+  version: 4aabc24848ce5fd31929f7d1e4ea74d3709c14cd
+- name: github.com/cihub/seelog
+  version: f561c5e57575bb1e0a2167028b7339b3a8d16fb4
+  subpackages:
+  - archive
+  - archive/gzip
+  - archive/tar
+  - archive/zip
+- name: github.com/dariubs/percent
+  version: 6a210960ed74f0c94ad2c45fb5ba2a49b7fd7b1c
+- name: github.com/fatih/color
+  version: 2d684516a8861da43017284349b7e303e809ac21
+- name: github.com/franela/goreq
+  version: bcd34c9993f899273c74baaa95e15386cd97b6e7
+- name: github.com/go-ini/ini
+  version: afbd495e5aaea13597b5e14fe514ddeaa4d76fc3
+- name: github.com/google/go-querystring
+  version: 53e6ce116135b80d037921a7fdd5138cf32d7a8a
+  subpackages:
+  - query
+- name: github.com/gorhill/cronexpr
+  version: 88b0669f7d75f171bd612b874e52b95c190218df
+- name: github.com/hashicorp/consul
+  version: 5174058f0d2bda63fa5198ab96c33d9a909c58ed
+  subpackages:
+  - api
+  - lib/freeport
+  - testutil
+  - testutil/retry
+- name: github.com/hashicorp/errwrap
+  version: 7554cd9344cec97297fa6649b055a8c98c2a1e55
+- name: github.com/hashicorp/go-cleanhttp
+  version: d5fe4b57a186c716b0e00b8c301cbd9b4182694d
+- name: github.com/hashicorp/go-immutable-radix
+  version: 7f3cd4390caab3250a57f30efdb2a65dd7649ecf
+- name: github.com/hashicorp/go-msgpack
+  version: fa3f63826f7c23912c15263591e65d54d080b458
+  subpackages:
+  - codec
+- name: github.com/hashicorp/go-multierror
+  version: b7773ae218740a7be65057fc60b366a49b538a44
+- name: github.com/hashicorp/go-rootcerts
+  version: 6bb64b370b90e7ef1fa532be9e591a81c3493e00
+- name: github.com/hashicorp/go-uuid
+  version: 27454136f0364f2d44b1276c552d69105cf8c498
+- name: github.com/hashicorp/go-version
+  version: 23480c0665776210b5fbbac6eaaee40e3e6a96b7
+- name: github.com/hashicorp/golang-lru
+  version: 0fb14efe8c47ae851c0034ed7a448854d3d34cf3
+  subpackages:
+  - simplelru
+- name: github.com/hashicorp/hcl
+  version: ef8a98b0bbce4a65b5aa4c368430a80ddc533168
+  subpackages:
+  - hcl/ast
+  - hcl/parser
+  - hcl/scanner
+  - hcl/strconv
+  - hcl/token
+  - json/parser
+  - json/scanner
+  - json/token
+- name: github.com/hashicorp/net-rpc-msgpackrpc
+  version: a14192a58a694c123d8fe5481d4a4727d6ae82f3
+- name: github.com/hashicorp/nomad
+  version: 1eedb7753f93dcd827819e42e8583cebe5fbc075
+  subpackages:
+  - acl
+  - api
+  - api/contexts
+  - helper
+  - helper/args
+  - helper/flatmap
+  - helper/uuid
+  - nomad/structs
+- name: github.com/hashicorp/raft
+  version: a3fb4581fb07b16ecf1c3361580d4bdb17de9d98
+- name: github.com/hashicorp/serf
+  version: 80ab48778deee28e4ea2dc4ef1ebb2c5f4063996
+  subpackages:
+  - coordinate
+- name: github.com/jmespath/go-jmespath
+  version: c2b33e8439af944379acbdd9c3a5fe0bc44bd8a5
+- name: github.com/mattn/go-colorable
+  version: 7dc3415be66d7cc68bf0182f35c8d31f8d2ad8a7
+- name: github.com/mattn/go-isatty
+  version: 6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c
+- name: github.com/mitchellh/cli
+  version: c48282d14eba4b0817ddef3f832ff8d13851aefd
+- name: github.com/mitchellh/copystructure
+  version: d23ffcb85de31694d6ccaa23ccb4a03e55c1303f
+- name: github.com/mitchellh/go-homedir
+  version: b8bc1bf767474819792c23f32d8286a45736f1c6
+- name: github.com/mitchellh/go-testing-interface
+  version: a61a99592b77c9ba629d254a693acffaeb4b7e28
+- name: github.com/mitchellh/hashstructure
+  version: 2bca23e0e452137f789efbc8610126fd8b94f73b
+- name: github.com/mitchellh/mapstructure
+  version: bb74f1db0675b241733089d5a1faa5dd8b0ef57b
+- name: github.com/mitchellh/reflectwalk
+  version: 63d60e9d0dbc60cf9164e6510889b0db6683d98c
+- name: github.com/NYTimes/gziphandler
+  version: 2600fb119af974220d3916a5916d6e31176aac1b
+- name: github.com/opsgenie/opsgenie-go-sdk
+  version: e5f3103b77a51ce247f876687dc717e81722fece
+  subpackages:
+  - alerts
+  - alertsv2
+  - alertsv2/savedsearches
+  - client
+  - contact
+  - escalation
+  - heartbeat
+  - integration
+  - logging
+  - notificationv2
+  - policy
+  - schedule
+  - scheduleoverride
+  - schedulev2
+  - team
+  - user
+  - userv2
+- name: github.com/PagerDuty/go-pagerduty
+  version: 078a3284fb0ee5256d2164b53b9ed44ff3b3b05e
+- name: github.com/pkg/errors
+  version: 816c9085562cd7ee03e7f8188a1cfd942858cded
+- name: github.com/posener/complete
+  version: e037c22b2fcfa85e74495388f03892ed194bba76
+  subpackages:
+  - cmd
+  - cmd/install
+  - match
+- name: github.com/Sirupsen/logrus
+  version: c155da19408a8799da419ed3eeb0cb5db0ad5dbc
+- name: github.com/ugorji/go
+  version: b4c50a2b199d93b13dc15e78929cfb23bfdf21ab
+  subpackages:
+  - codec
+- name: golang.org/x/crypto
+  version: 432090b8f568c018896cd8a0fb0345872bbac6ce
+  subpackages:
+  - blake2b
+  - ssh/terminal
+- name: golang.org/x/sys
+  version: 37707fdb30a5b38865cfb95e5aab41707daec7fd
+  subpackages:
+  - unix
+  - windows
+testImports:
+- name: github.com/hashicorp/consul-template
+  version: 111a80441153783544817b7c6a9c08633308b9a8
+  subpackages:
+  - test

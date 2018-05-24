@@ -23,7 +23,11 @@ func describeScalingGroup(asgName string,
 			aws.String(asgName),
 		},
 	}
+
 	resp, err := svc.DescribeAutoScalingGroups(params)
+	if err != nil {
+		return nil, fmt.Errorf("DescribeAutoScalingGroups failed with %v", err)
+	}
 
 	// If we failed to get exactly one ASG, raise an error.
 	if len(resp.AutoScalingGroups) != 1 {
@@ -54,7 +58,12 @@ func getMostRecentInstance(asg, region string) (node string, err error) {
 
 	// Setup AWS EC2 API Session
 	sess := session.Must(session.NewSession())
-	svc := ec2.New(sess, &aws.Config{Region: aws.String(region)})
+	awsConf := aws.NewConfig().
+		WithMaxRetries(11).
+		WithRegion(region).
+		WithLogLevel(aws.LogDebugWithRequestRetries | aws.LogDebugWithRequestErrors)
+
+	svc := ec2.New(sess, awsConf)
 
 	// Setup query parameters to find instances that are associated with the
 	// specified autoscaling group and are in a running or pending state.
